@@ -7,19 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <title>jQuery Playground</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />  
 </head>
 <body>
     <script>
         $(document).ready(function() {
+            $(".target:nth-child(2)").addClass("animated bounce");
             $("button").addClass("animated");
             $(".btn").addClass("shake");
             $("#target1").addClass("btn-primary");
             $("#target5").removeClass("btn-default");
-            $("#target2").css("color", "red");
             $("#target3").prop("disabled", true);
             $("#target4").html("<em>#target4</em>");
             $("#target6").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target4").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange");
+            $("#target1").click(function() {
+                $("body").addClass("animated hinge");
+            });
         });
     </script>
     <!--Code bellow this line should not be changed-->
