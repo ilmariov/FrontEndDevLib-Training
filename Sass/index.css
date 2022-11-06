@@ -1,0 +1,95 @@
+.header {
+  text-align: center;
+}
+
+.blog-post h2 {
+  color: red;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: purple;
+  -webkit-border-radius: 15px;
+  -moz-border-raidus: 15px;
+  border-radius: 15px;
+}
+
+#separator {
+  width: 10px;
+  height: 20px;
+}
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: greenyellow;
+  border: 6px solid black;
+}
+
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+.blue-bg {
+  background-color: blue;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.exercise {
+  height: 200px;
+  width: 200px;
+}
+
+.ntext-1 {
+  font-size: 15px;
+}
+
+.ntext-2 {
+  font-size: 30px;
+}
+
+.ntext-3 {
+  font-size: 45px;
+}
+
+.ntext-4 {
+  font-size: 60px;
+}
+
+.ntext-5 {
+  font-size: 75px;
+}
+
+.info, .info-important {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  background-color: lightseagreen;
+}/*# sourceMappingURL=index.css.map */
