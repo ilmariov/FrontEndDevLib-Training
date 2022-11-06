@@ -1,0 +1,72 @@
+$text-color: red;
+
+.header{
+    text-align: center;
+}
+.blog-post {
+    h2 {
+    color: $text-color;
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-raidus: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+#awesome {
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    @include border-radius(15px);
+}
+
+#separator {
+    width: 10px;
+    height: 20px;
+}
+
+@mixin border-stroke($val) {
+    @if $val == light {
+        border: 1px solid black;
+    } 
+    @else if $val == medium {
+        border: 3px solid black;
+    }
+    @else if $val == heavy {
+        border: 6px solid black;
+    }
+    @else {
+        border: none;
+    }
+}
+
+#box {
+    width: 150px;
+    height: 150px;
+    background-color: greenyellow;
+    @include border-stroke(heavy);
+}
+
+@for $i from 1 to 6 {
+    .text-#{$i} {
+        font-size: 15px * $i;
+    }
+}
+
+@each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+}
+
+.exercise {
+    height: 200px;
+    width: 200px;
+}
+
+$i: 1;
+@while $i < 6 {
+    .ntext-#{$i} {font-size: 15px * $i;}
+    $i: $i + 1;
+}
