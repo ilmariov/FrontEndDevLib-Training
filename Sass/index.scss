@@ -70,3 +70,14 @@ $i: 1;
     .ntext-#{$i} {font-size: 15px * $i;}
     $i: $i + 1;
 }
+
+.info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.info-important {
+    @extend .info;
+    background-color: lightseagreen;
+}
