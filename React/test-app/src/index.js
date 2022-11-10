@@ -15,9 +15,16 @@ const JSX = (
     </div>
 );
 
+const MyFirstComponent = function() {
+    return (
+        <div>
+            <h3>This is my first component in React</h3>
+        </div>
+    );
+};
+
 const test = ReactDOM.createRoot(document.getElementById('testing-this'));
 test.render(JSX);
-//ReactDOM.render(JSX, document.getElementById('testing-this'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
