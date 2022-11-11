@@ -19,8 +19,7 @@ root.render(JSX);*/
 const MyFirstComponent = function() {
     return (
         <div>
-            <h3>Now this component is having a baby</h3>
-            <ChildComponent />
+            <h3>No you're not, "NestedComponents" is!</h3>
         </div>
     );
 };
@@ -50,7 +49,7 @@ const ChildComponent = () => {
     );
 }
 
-/*class ParenComponent extends React.Component {
+class ParenComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -58,12 +57,12 @@ const ChildComponent = () => {
         return (
             <div>
                 <h1>Obey! I'm your father</h1>
-                <ChildComponent />
+                <MyFirstComponent />
             </div>
         );
     }
 }
-const gettingThis = <ParenComponent />;
+/*const gettingThis = <ParenComponent />;
 root.render(gettingThis);*/
 
 class NestedComponents extends React.Component {
@@ -74,7 +73,7 @@ class NestedComponents extends React.Component {
         return (
             <div>
                 <h1>All right Kids, behave!!!</h1>
-                <MyFirstComponent />
+                <ParenComponent />
             </div>
         );
     }
