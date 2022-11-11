@@ -16,14 +16,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 );
 root.render(JSX);*/
 
-/*const MyFirstComponent = function() {
+const MyFirstComponent = function() {
     return (
         <div>
-            <h3>This is my first component in React</h3>
+            <h3>Now this component is having a baby</h3>
+            <ChildComponent />
         </div>
     );
 };
-const tryingComp = <MyFirstComponent />;
+/*const tryingComp = <MyFirstComponent />;
 root.render(tryingComp)*/
 
 /*class AnotherComponent extends React.Component {
@@ -44,12 +45,12 @@ root.render(stillTrying);*/
 const ChildComponent = () => {
     return (
         <div>
-            <p>All right, I am the child, is that ok?</p>
+            <p>Noooo, now I'm MyFirstComponent's baby!!</p>
         </div>
     );
 }
 
-class ParenComponent extends React.Component {
+/*class ParenComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -62,9 +63,25 @@ class ParenComponent extends React.Component {
         );
     }
 }
-
 const gettingThis = <ParenComponent />;
-root.render(gettingThis);
+root.render(gettingThis);*/
+
+class NestedComponents extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h1>All right Kids, behave!!!</h1>
+                <MyFirstComponent />
+            </div>
+        );
+    }
+}
+const NestedVar = <NestedComponents />;
+root.render(NestedVar);
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
