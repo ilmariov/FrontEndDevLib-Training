@@ -5,7 +5,8 @@ import './index.css';
 
 //const myElement = <h1>Hello JSX!</h1>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const test = ReactDOM.createRoot(document.getElementById('test-div'));
+
 //root.render(myElement);
 
 /*const JSX = (
@@ -41,15 +42,15 @@ root.render(tryingComp)*/
 const stillTrying = <AnotherComponent/>;
 root.render(stillTrying);*/
 
-const ChildComponent = () => {
+/*const ChildComponent = () => {
     return (
         <div>
             <p>Noooo, now I'm MyFirstComponent's baby!!</p>
         </div>
     );
-}
+}*/
 
-class ParenComponent extends React.Component {
+class ParentComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -73,13 +74,13 @@ class NestedComponents extends React.Component {
         return (
             <div>
                 <h1>All right Kids, behave!!!</h1>
-                <ParenComponent />
+                <ParentComponent />
             </div>
         );
     }
 }
-const NestedVar = <NestedComponents />;
-root.render(NestedVar);
+
+test.render(<NestedComponents />);
 
 
 // If you want to start measuring performance in your app, pass a function
