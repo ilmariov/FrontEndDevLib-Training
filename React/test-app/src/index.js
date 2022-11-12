@@ -229,7 +229,7 @@ ShoppingCart.defaultProps = {
         });
     }
     render() {
-        if (this.state.visibility) {
+        if (this.state.visibility === true) {
             return (
             <div>
                 <button onClick={this.toggleVisibility}>Click Me</button>
@@ -490,13 +490,19 @@ class RenderInput extends React.Component {
     }
 };*/
 
+const styles = {
+    color: 'purple',
+    fontSize: 90,
+    border: '2px solid purple'
+}
+
 class OnlyEvens extends React.Component {
     constructor(props) {
         super(props);
     }
     shouldComponentUpdate(nextProps, nextState) {
         console.log('Should I update?');
-        if (nextProps.value % 3 === 0) {
+        if (nextProps.value % 2 === 0) {
             return true;
         } else {
             return false;
@@ -506,7 +512,7 @@ class OnlyEvens extends React.Component {
         console.log('Component re-rendered.');
     }
     render() {
-        return <h1>{this.props.value}</h1>;
+        return <h1 style={{fontSize: 90, color: 'purple'}}>{this.props.value}</h1>;
     }
 }
   
@@ -528,6 +534,7 @@ class Controller extends React.Component {
             <div>
                 <button onClick={this.addValue}>Add</button>
                 <OnlyEvens value={this.state.value} />
+                <h3 style={styles}>Styling this</h3>
             </div>
         );
     }
