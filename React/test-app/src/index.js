@@ -610,7 +610,7 @@ class MagicEightBall extends React.Component {
     }
 }*/
 
-class MyComponent extends React.Component {
+/*class MyComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -624,7 +624,6 @@ class MyComponent extends React.Component {
         }));
     }
     render() {
-      // Change code below this line
         /*if (this.state.display === true) {
             return (
             <div>
@@ -639,16 +638,223 @@ class MyComponent extends React.Component {
             </div>
             );  
         }*/
-        return (
+        /*return (
             <div>
                 <button onClick={this.toggleDisplay}>Toggle Display</button>
                 {this.state.display && <h1>Displayed!</h1>}
             </div>
         )
     }
+};*/
+
+/*const inputStyle = {
+    width: 235,
+    margin: 5
+};*/
+  
+/*class CheckUserAge extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: '',
+            userAge: ''
+        }
+        this.submit = this.submit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(e) {
+        this.setState({
+            input: e.target.value,
+            userAge: ''
+        });
+    }
+    submit() {
+        this.setState(state => ({
+            userAge: state.input
+        }));
+    }
+    render() {
+        const buttonOne = <button onClick={this.submit}>Check</button>;
+        const buttonTwo = <button>Hop you in!</button>;
+        const buttonThree = <button>Back off!</button>;
+        return (
+            <div>
+                <h3>Enter Your Age to Continue</h3>
+                <input
+                    style={inputStyle}
+                    type='number'
+                    value={this.state.input}
+                    onChange={this.handleChange}
+                />
+                <br />
+                {this.state.userAge === '' ? buttonOne : this.state.userAge >= 18 ? buttonTwo : buttonThree}
+            </div>
+        );
+    }
+}*/
+
+/*class Results extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <h1>{this.props.fiftyFifty ? 'You Win!' : 'You Lose!'}</h1>;
+    }
+}
+  
+class GameOfChance extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 1
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+        this.setState({
+            counter: this.state.counter + 1            
+        });
+    }
+    render() {
+        const expression = Math.random() >= .5;
+        return (
+            <div>
+                <button onClick={this.handleClick}>Play Again</button>
+                <Results fiftyFifty={expression}/>
+                <p>{'Turn: ' + this.state.counter}</p>
+            </div>
+        );
+    }
+}*/
+
+/*class GateKeeper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+        this.setState({ input: event.target.value })
+    }
+    render() {
+        let inputStyle = {border: '1px solid black'};
+        if (this.state.input.length > 15) {
+            inputStyle = {border: '3px solid red'};
+        }
+        return (
+            <div>
+                <h3>Don't Type Too Much:</h3>
+                <input
+                    type="text"
+                    style={inputStyle}
+                    value={this.state.input}
+                    onChange={this.handleChange} />
+            </div>
+        );
+    }
+};*/
+
+/*const textAreaStyles = {
+    width: 235,
+    margin: 5
 };
+  
+class MyToDoList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userInput: '',
+            toDoList: []
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleSubmit() {
+        const itemsArray = this.state.userInput.split(',');
+        this.setState({
+            toDoList: itemsArray
+        });
+    }
+    handleChange(e) {
+        this.setState({
+            userInput: e.target.value
+        });
+    }
+    render() {
+        const items = this.state.toDoList.map(item => <li>{item}</li>);
+        const items2 = this.state.toDoList.map(item => <li key={item}>{item}</li>)
+        return (
+            <div>
+                <textarea
+                    onChange={this.handleChange}
+                    value={this.state.userInput}
+                    style={textAreaStyles}
+                    placeholder='Separate Items With Commas'
+                />
+                <br />
+                <button onClick={this.handleSubmit}>Create List</button>
+                <h1>My "To Do" List:</h1>
+                <ul>{items}</ul>
+                <h1>Almost the same "To Do" list:</h1>
+                <ul>{items2}</ul>
+            </div>
+        );
+    }
+}*/
+
+//const ReactDOMServer = require('react-dom/server');
+
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: [
+                {
+                    username: 'Jeff',
+                    online: true
+                },
+                {
+                    username: 'Alan',
+                    online: false
+                },
+                {
+                    username: 'Mary',
+                    online: true
+                },
+                {
+                    username: 'Jim',
+                    online: false
+                },
+                {
+                    username: 'Sara',
+                    online: true
+                },
+                {
+                    username: 'Laura',
+                    online: true
+                }
+            ]
+        };
+    }
+    render() {
+        const usersOnline = this.state.users.filter(user => user.online);
+        const renderOnline = usersOnline.map(item => (
+                <li key={item.username}>{item.username}</li>
+            )
+        )
+        return (
+            <div>
+                <h1>Current Online Users:</h1>
+                <ul>{renderOnline}</ul>
+            </div>
+        );
+    }
+}
 
 test.render(<MyComponent/>)
+//ReactDOMServer.renderToString(<MyComponent/>)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
