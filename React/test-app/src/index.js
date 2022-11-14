@@ -756,7 +756,7 @@ class GameOfChance extends React.Component {
     }
 };*/
 
-/*const textAreaStyles = {
+const textAreaStyles = {
     width: 235,
     margin: 5
 };
@@ -802,11 +802,11 @@ class MyToDoList extends React.Component {
             </div>
         );
     }
-}*/
+}
 
 //const ReactDOMServer = require('react-dom/server');
 
-class MyComponent extends React.Component {
+/*class MyComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -851,9 +851,9 @@ class MyComponent extends React.Component {
             </div>
         );
     }
-}
+}*/
 
-test.render(<MyComponent/>)
+test.render(<MyToDoList/>)
 //ReactDOMServer.renderToString(<MyComponent/>)
 
 // If you want to start measuring performance in your app, pass a function
