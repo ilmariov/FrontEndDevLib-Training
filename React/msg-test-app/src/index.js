@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -63,7 +62,7 @@ class DisplayMessages extends React.Component {
   }
 };
 
-root.render(<DisplayMessages/>)
+root.render(<DisplayMessages />)
 
 /*root.render(
   <React.StrictMode>
