@@ -1,28 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import store from './store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Redux
-const ADD = 'ADD';
-
-const addMessage = (message) => {
+/*const addMessage = (message) => {
   return {
     type: ADD,
     message
   }
-}
+}*/
 
-const messageReducer = (state = [], action) => {
-  switch(action.type) {
-    case ADD:
-      return [...state, action.message];
-    default: 
-      return state
-  }
-}
 
 //React
 class DisplayMessages extends React.Component {
@@ -62,15 +52,25 @@ class DisplayMessages extends React.Component {
   }
 };
 
-root.render(<DisplayMessages />)
+//connect Redux to React
+/*class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <DisplayMessages />
+      </Provider>
+    )
+  }
+}*/
+
+root.render(
+  <Provider store={store}>
+    <DisplayMessages />
+  </Provider>
+)
 
 /*root.render(
   <React.StrictMode>
-    <App />
+    <DisplayMessages />
   </React.StrictMode>
 );*/
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
