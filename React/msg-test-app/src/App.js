@@ -1,10 +1,10 @@
 import './App.css';
-import DisplayMessages from './components/DisplayMsgs';
+import Container from './components/DisplayMsgs';
 
 function App() {
     return (
         <div className="App">
-          <DisplayMessages/>
+          <Container />
         </div>
     );
 }
