@@ -5,6 +5,6 @@ const addMessage = (message) => {
         type: ADD,
         message
     }
-}}
+}
 
 export default addMessage;
