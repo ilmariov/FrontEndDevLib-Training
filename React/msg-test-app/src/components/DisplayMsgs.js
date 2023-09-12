@@ -1,24 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { mapStateToProps, mapDispatchToProps } from '../actions/maps';
 
 class DisplayMessages extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            input: '',
-            messages: []
+            input: ''
         }
     };
     handleChange(event) {
         this.setState({
-            input: event.target.value,
-            messages: this.state.messages
+            input: event.target.value
         });
     }
   
     submitMessage() {
+        this.props.submitNewMessage(this.state.input);
         this.setState({
-            input: '',
-            messages: [...this.state.messages, this.state.input]
+            input: ''
         });
     }
   
@@ -26,15 +26,17 @@ class DisplayMessages extends React.Component {
         return (
             <div>
                 <h2>Type in a new Message:</h2>
-                <input value={this.state.input} onChange={this.handleChange.bind(this)}></input>
+                <input value={this.state.input} onChange={this.handleChange}></input>
                 <br/><br/>        
-                <button onClick={this.submitMessage.bind(this)}>Add message</button>
+                <button onClick={this.submitMessage}>Send</button>
                 <ul>
-                    {this.state.messages.map(item => <li>{item}</li>)}
+                    {this.props.messages.map(item => <li>{item}</li>)}
                 </ul>
             </div>
         );
     }
 };
 
-export default DisplayMessages;
+const Container = connect(mapStateToProps, mapDispatchToProps)(DisplayMessages);
+
+export default Container;
